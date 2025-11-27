@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>縦型年表ウィジェット</title>
+<style>
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 2px;
+  background: #333;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+}
+.event {
+  position: relative;
+  width: 45%;
+  padding: 10px 20px;
+  background: #f9f9f9;
+  margin: 20px 0;
+  border-radius: 4px;
+}
+.event:nth-child(odd) {
+  left: 0;
+}
+.event:nth-child(even) {
+  left: 55%;
+}
+.event .date {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+@media screen and (max-width: 600px) {
+  .event, .event:nth-child(even), .event:nth-child(odd) {
+    width: 90%;
+    left: 5% !important;
+  }
+}
+</style>
+</head>
+<body>
+<div class="timeline">
+  <div class="event">
+    <div class="date">1900</div>
+    <div class="content">事件A</div>
+  </div>
+  <div class="event">
+    <div class="date">1950</div>
+    <div class="content">事件B</div>
+  </div>
+  <div class="event">
+    <div class="date">2000</div>
+    <div class="content">事件C</div>
+  </div>
+  <div class="event">
+    <div class="date">2010</div>
+    <div class="content">事件D</div>
+  </div>
+  <div class="event">
+    <div class="date">2020</div>
+    <div class="content">事件E</div>
+  </div>
+  <div class="event">
+    <div class="date">2025</div>
+    <div class="content">最新出来事</div>
+  </div>
+</div>
+</body>
+</html>
